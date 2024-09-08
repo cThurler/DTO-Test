@@ -11,16 +11,15 @@ let errorP = document.querySelector("#error");
 validaCampos();
 
 form.addEventListener("submit", (formSubmit) => {
-    formSubmit.preventDefault();
+  formSubmit.preventDefault();
 
-    allInputs.forEach((e) => {
-      if (e.value == "" || e.value == null) {
-        e.classList.add("invalido");
-      }
-    });
+  allInputs.forEach((e) => {
+    if (e.value == "" || e.value == null) {
+      e.classList.add("invalido");
+    }
+  });
 
   const formData = new FormData(form);
-
 
   fetch("php/main.php", {
     method: "POST",
@@ -44,21 +43,39 @@ form.addEventListener("submit", (formSubmit) => {
     .catch((error) => console.log(`Erro no lado do servidor: ${error}`));
 });
 
+
+
 function validaCampos() {
-
-
   allInputs.forEach((e) => {
-    e.addEventListener("blur", () => {
-      if (e.value == "" || e.value == null) {
-        e.classList.add("invalido");
-      }
-    });
     e.addEventListener("focus", () => [e.classList.remove("invalido")]);
   });
 
   nome.addEventListener("blur", () => {
-    if (!validaNumero(nome.value)) {
+    if (!validaNumero(nome.value) || nome.value == "" || nome.value == null) {
       nome.classList.add("invalido");
+    } else {
+      nome.classList.remove("invalido");
+    }
+  });
+
+  email.addEventListener("blur", () => {
+    if (!validaEmail(email.value) || email.value == "" || email.value == null) {
+      email.classList.add("invalido");
+    } else {
+      email.classList.remove("invalido");
+    }
+  });
+
+  tel.addEventListener("blur", () => {
+    if (
+      tel.value.length < 10 ||
+      tel.value.length > 11 ||
+      tel.value == "" ||
+      tel.value == null
+    ) {
+      tel.classList.add("invalido");
+    } else {
+      tel.classList.remove("invalido");
     }
   });
 }
@@ -67,7 +84,12 @@ function validaNumero(str) {
   for (let i = 0; i < str.length; i++) {
     if (!isNaN(str[i]) && str[i] !== " ") {
       return false;
-    }
-  }
+    };
+  };
   return true;
-}
+};
+
+function validaEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
