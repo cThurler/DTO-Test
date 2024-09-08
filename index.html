@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+    <script src=""></script>
+</head>
+<body>
+    <section class="login-container flex">
+        <div class="form-container flex">
+            <H1>Login</H1>
+            <form class="form flex" method="POST" action="php/main.php">
+                <input id="nome" name="Nome" class="form-input" placeholder="Nome" type="text">
+                <input id="email" name="Email" class="form-input" placeholder="E-mail" type="text">
+                <input id="telefone" name="Telefone" class="form-input" placeholder="Telefone" type="tel">
+                <button class="submit" type="submit">submit</button>
+            </form>
+        </div>
+        <p id="error"> </p>
+    </section>
+</body>
+</html>
