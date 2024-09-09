@@ -14,6 +14,4 @@ implementação de comunicação e validação de recursos no PHP.
 -Melhoras gerais no CSS.
 -Otimização de código.
 -Máscara do telefone, com validação no backend.
-
-TODO:
--encapsular métodos (!!), 
+-Métodos encapsulados
