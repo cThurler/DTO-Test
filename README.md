@@ -1,9 +1,11 @@
 # DTO-Test
 
 # MySQL
--Arquivo para importação da base de dados está incluso como "dto-teste.sql",
+-Arquivo para importação da base de dados está incluso como "dto_teste_caio.sql",
 se trata de um banco de dados simples com uma única tabela, com
-ID de Auto-Increment, Nome (25), Email (40) e Telefone. (11)[DDD+Numero];
+ID de Auto-Increment, Nome, Email e Telefone.
+
+Foi utilizado o XAMPP para criação e debug desse teste.
 
 # Log
 07/09/24 
