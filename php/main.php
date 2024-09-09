@@ -32,7 +32,9 @@ function processarForm(){
         $errors[] = "O email fornecido é inválido.";
     } else $email = $_POST['Email'];
     
-    if (strlen(preg_replace('/\D/', '', $_POST['Telefone'])) === 11) {
+    //valida o tamanho do num tel depois de convertar para somente numeros
+    $telLength = strlen(preg_replace('/\D/', '', $_POST['Telefone']));
+    if ($telLength === 11 ||$telLength === 10 ) {
         $tel = $_POST['Telefone'];
     } else {
         $errors[] = "Telefone inválido";

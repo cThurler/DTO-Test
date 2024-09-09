@@ -11,7 +11,7 @@ class RepositorioUsuario
             $ps = $pdo->prepare("INSERT INTO usuario(nome,email,tel) VALUES (:nome,:email,:tel)");
             $ps->execute(['nome' => $u->nome, 'email' => $u->email, 'tel' => $u->telefone]);
         } catch (PDOException $e) {
-            die("erro interno do servidor" . $e->getMessage());
+            die("Erro interno do servidor.");
         }
     }
 }
