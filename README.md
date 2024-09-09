@@ -11,9 +11,9 @@ ID de Auto-Increment, Nome (25), Email (40) e Telefone. (11)[DDD+Numero];
 implementação de comunicação e validação de recursos no PHP.
 
 08/09/24 
--melhorar CSS
+-Melhoras gerais no CSS.
+-Otimização de código.
+-Máscara do telefone, com validação no backend.
 
 TODO:
--mascara para validacao telefone (!!))
 -encapsular métodos (!!), 
--otimizar cod

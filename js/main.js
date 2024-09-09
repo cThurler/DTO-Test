@@ -68,8 +68,8 @@ function validaCampos() {
 
   tel.addEventListener("blur", () => {
     if (
-      tel.value.length < 10 ||
-      tel.value.length > 11 ||
+      tel.value.length != 14 &&
+      tel.value.length != 15 || 
       tel.value == "" ||
       tel.value == null
     ) {
@@ -78,6 +78,42 @@ function validaCampos() {
       tel.classList.remove("invalido");
     }
   });
+  
+  //mask do telefone
+  tel.addEventListener("input", () => {
+    //elimina nao-digitos
+    let limparValor = tel.value.replace(/\D/g, "").substring(0, 11);
+    //formata o input
+    let numsArr = limparValor.split("");
+    let numFormatado = "";
+
+  if (numsArr.length <= 10) {
+    if (numsArr.length > 0) {
+      numFormatado += `(${numsArr.slice(0, 2).join("")})`;
+    }
+    if (numsArr.length > 2) {
+      numFormatado += ` ${numsArr.slice(2, 6).join("")}`;
+    }
+    if (numsArr.length > 6) {
+      numFormatado += `-${numsArr.slice(6, 10).join("")}`;
+    }
+  } else {
+    if (numsArr.length > 0) {
+      numFormatado += `(${numsArr.slice(0, 2).join("")})`;
+    }
+    if (numsArr.length > 2) {
+      numFormatado += ` ${numsArr.slice(2, 7).join("")}`;
+    }
+    if (numsArr.length > 7) {
+      numFormatado += `-${numsArr.slice(7, 11).join("")}`;
+    }
+  }
+
+  tel.value = numFormatado;
+  });
+
+
+  
 }
 
 function validaNumero(str) {

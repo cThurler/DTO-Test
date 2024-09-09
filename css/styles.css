@@ -70,6 +70,10 @@
 
     padding: 2%;
 }
+.form-input:current{
+    border-color: black !important;
+}
+
 .submit{
     margin: 3%;
     width: 40%;
