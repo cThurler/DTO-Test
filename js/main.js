@@ -78,7 +78,7 @@ function validaCampos() {
       tel.classList.remove("invalido");
     }
   });
-  
+
   //mask do telefone
   tel.addEventListener("input", () => {
     //elimina nao-digitos
