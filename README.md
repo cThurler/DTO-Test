@@ -1,5 +1,7 @@
 # DTO-Test
 
+Se trata de um sistema simples com CRUD em PHP e validação de campos em front-end e em back-end.
+
 # MySQL
 -Arquivo para importação da base de dados está incluso como "dto_teste_caio.sql",
 se trata de um banco de dados simples com uma única tabela, com
